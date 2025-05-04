@@ -1,8 +1,15 @@
 import React from "react";
 import { assets, top_selling } from "../assets/assets";
 import Button from "./Button";
+import { useAppContext } from "../context/AppContext";
 
 const TopSellings = () => {
+  const { navigate } = useAppContext();
+
+  const toCart = () => {
+    navigate("/product/detail");
+  };
+
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -38,13 +45,14 @@ const TopSellings = () => {
       <h2 className="text-center text-[48px] mt-[72px] mb-[52px] font-bold">
         TOP SELLING
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[20px] px-[100px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[20px] px-4 sm:px-8 md:px-[100px]">
         {top_selling.map((item, index) => (
           <div key={index}>
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-auto mb-4 rounded cursor-pointer"
+              onClick={toCart}
+              className="w-full h-auto mb-4 rounded cursor-pointer transition-transform hover:scale-105"
             />
             <h3 className="font-bold mb-1">{item.title}</h3>
             <div className="flex items-center gap-1 mb-1">

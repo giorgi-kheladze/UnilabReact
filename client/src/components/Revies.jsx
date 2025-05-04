@@ -53,9 +53,11 @@ const Revies = () => {
     return stars;
   };
   return (
-    <div className="relative mb-[170px]">
-      <div className="flex items-center justify-between px-[100px] mb-[40px]">
-        <h3 className="text-[48px] font-bold">OUR HAPPY CUSTOMMERS</h3>
+    <div className="relative mb-[140px] sm:mb-[140px] md:mb-[170px]">
+      <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-[100px] mb-[24px] sm:mb-[40px] gap-4 sm:gap-0">
+        <h3 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-center sm:text-left">
+          OUR HAPPY CUSTOMMERS
+        </h3>
         <div className="flex gap-[16px]">
           <img
             className="swiper-prev-btn cursor-pointer"

@@ -13,6 +13,10 @@ const Navbar = () => {
   const login = () => {
     navigate("/login");
   };
+
+  const cart = () => {
+    navigate("/cart");
+  };
   return (
     <div className="px-[16px] py-[20px] md:px-[100px] md:py-[24px]">
       <nav className="navbar flex items-center justify-between relative transition-all">
@@ -38,7 +42,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex gap-[14px] items-center">
-            <div className="relative cursor-pointer">
+            <div className="relative cursor-pointer" onClick={cart}>
               <img src={assets.basket} alt="basket" />
               <button className="absolute -top-1.5 -right-2 text-xs text-white bg-black w-[18px] h-[18px] rounded-full">
                 0

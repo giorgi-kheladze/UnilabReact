@@ -45,14 +45,14 @@ const AllRevius = () => {
     return stars;
   };
   return (
-    <div className="px-[100px]">
-      <div className="flex items-center justify-between mb-[24px]">
+    <div className="px-4 sm:px-8 md:px-12 lg:px-[100px]">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
         <div className="flex items-center gap-[8px]">
-          <p className="text-[24px] font-medium">All Reviws</p>
+          <p className="text-xl md:text-2xl font-medium">All Reviws</p>
           <p className="text-gray-500">(451)</p>
         </div>
 
-        <div className="flex gap-[10px]">
+        <div className="flex flex-wrap gap-2 md:gap-3">
           <button className="p-[12px] bg-gray-200 rounded-full cursor-pointer">
             <img src={assets.filter} alt="filter" />
           </button>
@@ -64,7 +64,7 @@ const AllRevius = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-[20px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[20px]">
         {randomElements.map((user) => (
           <div className="relative px-[32px] py-[28px] border border-gray-300 rounded-[20px]">
             <img

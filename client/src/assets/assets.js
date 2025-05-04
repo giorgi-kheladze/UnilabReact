@@ -62,6 +62,9 @@ import filter from "./filter.svg";
 import promo from "./promo.svg";
 import trash from "./trash.svg";
 import arrow_beside from "./arrow_beside.svg";
+import rate_star from "./rate_star.svg";
+import email from "./email.svg";
+import rate_person from "./rate_person.svg";
 export const assets = {
   cancel,
   logo,
@@ -127,6 +130,9 @@ export const assets = {
   promo,
   trash,
   arrow_beside,
+  rate_star,
+  email,
+  rate_person,
 };
 
 export const brands = [

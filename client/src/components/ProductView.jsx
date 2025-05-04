@@ -1,12 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assets";
 
 const ProductView = () => {
   const [selected, setSelected] = useState(null);
   const [colorSelected, setColorSelected] = useState(null);
   const [count, setCount] = useState(1);
-
   const [activeTab, setActiveTab] = useState("Rating & Reviews");
 
   const tabs = ["Product Details", "Rating & Reviews", "FAQs"];
@@ -63,85 +61,90 @@ const ProductView = () => {
 
   return (
     product && (
-      <div className="max-w-6xl w-full px-[100px]">
-        <p className="text-gray-500">
+      <div className="w-full max-w-6xl mx-auto px-5 sm:px-10 lg:px-20">
+        <p className="text-gray-500 text-sm sm:text-base mt-4">
           <span>Home</span> /<span> Shop</span> /
           <span> {product.basicCategory}</span> /
           <span className="text-black"> {product.category}</span>
         </p>
 
-        <div className="flex flex-col md:flex-row gap-16 mt-4">
-          <div className="flex gap-3">
-            <div className="flex flex-col gap-3">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 lg:gap-6">
+            <div className="flex flex-row lg:flex-col gap-2">
               {product.images.map((image, index) => (
                 <div
                   key={index}
                   onClick={() => setThumbnail(image)}
-                  className="w-[112px] cursor-pointer"
+                  className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 cursor-pointer"
                 >
-                  <img src={image} alt={`Thumbnail ${index + 1}`} />
+                  <img
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    className="w-full h-full object-cover rounded"
+                  />
                 </div>
               ))}
             </div>
 
             <div>
               <img
-                className="w-[450px]"
+                className="w-[280px] max-w-md sm:max-w-lg object-cover"
                 src={thumbnail}
                 alt="Selected product"
               />
             </div>
           </div>
 
-          {/*  */}
-          <div className="text-sm w-full md:w-1/2">
-            <h1 className="text-3xl font-medium">{product.name}</h1>
+          <div className="w-full lg:w-1/2 text-sm">
+            <h1 className="text-2xl sm:text-3xl font-medium">{product.name}</h1>
 
-            <div className="flex items-center gap-0.5 mt-1">
+            <div className="flex items-center gap-1 mt-2">
               {renderStars(product.rating)}
               <p className="text-base ml-2">{product.rating}/5</p>
             </div>
 
-            <div className="flex items-center gap-[10px]">
-              <p className="font-bold text-[24px]">${product.price}</p>
-              <p className="font-bold text-[24px] text-gray-400 line-through">
+            <div className="flex items-center gap-3 mt-2">
+              <p className="font-bold text-xl sm:text-2xl">${product.price}</p>
+              <p className="font-bold text-xl sm:text-2xl text-gray-400 line-through">
                 ${Math.floor(product.price / (1 - product.discount / 100))}
               </p>
-              <div className="px-[13px] py-[6px] rounded-full text-[#FF3333] text-[12px] font-bold bg-red-200">
+              <div className="px-3 py-1 rounded-full text-[#FF3333] text-xs font-bold bg-red-200">
                 -{product.discount}%
               </div>
             </div>
 
-            <p className="text-[14px] mt-[10px] mb-[10px] text-gray-500">
+            <p className="text-sm mt-4 mb-4 text-gray-500">
               {product.description}
             </p>
+            <div className="w-full h-px bg-gray-300 mb-4"></div>
 
-            <div className="w-full h-[0.5px] bg-gray-300"></div>
-            <div>
-              <p className="text-gray-500">Select Colors</p>
-              <div className="flex gap-[16px]">
+            <div className="mb-4">
+              <p className="text-gray-500 mb-1">Select Colors</p>
+              <div className="flex gap-4">
                 {product.colors.map((color, index) => (
                   <div
                     onClick={() => setColorSelected(color)}
                     key={index}
-                    className="relative w-[37px] h-[37px] rounded-full cursor-pointer flex items-center justify-center"
+                    className="relative w-9 h-9 rounded-full cursor-pointer flex items-center justify-center"
                     style={{ background: color }}
                   >
                     {colorSelected === color && (
-                      <img src={assets.choose} alt="choosen" />
+                      <img src={assets.choose} alt="chosen" />
                     )}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="w-full h-[1px] bg-gray-300"></div>
-            <div>
-              <p className="text-gray-500">Choose Size</p>
-              <div className="flex gap-[12px]">
+
+            <div className="w-full h-px bg-gray-300 mb-4"></div>
+
+            <div className="mb-4">
+              <p className="text-gray-500 mb-1">Choose Size</p>
+              <div className="flex flex-wrap gap-3">
                 {product.sizes.map((size, index) => (
                   <button
                     onClick={() => setSelected(size)}
-                    className={`px-[24px] py-[12px] rounded-full cursor-pointer ${
+                    className={`px-6 py-2 rounded-full ${
                       selected === size
                         ? "bg-black text-white"
                         : "bg-[#F0F0F0] text-black"
@@ -153,36 +156,35 @@ const ProductView = () => {
                 ))}
               </div>
             </div>
-            <div className="w-full h-[0.5px] bg-gray-300"></div>
-            <div className="flex items-center mt-10 gap-4 text-base">
-              <div className="flex w-[170px] items-center justify-between bg-[#F0F0F0] px-[20px] py-[15px] rounded-full">
+
+            <div className="w-full h-px bg-gray-300 mb-4"></div>
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
+              <div className="flex w-full sm:w-48 items-center justify-between bg-[#F0F0F0] px-6 py-3 rounded-full">
                 <button
                   onClick={() => setCount(count > 1 ? count - 1 : 1)}
-                  className="cursor-pointer"
+                  className="text-xl"
                 >
                   -
                 </button>
                 <p>{count}</p>
-                <button
-                  onClick={() => setCount(count + 1)}
-                  className="cursor-pointer"
-                >
+                <button onClick={() => setCount(count + 1)} className="text-xl">
                   +
                 </button>
               </div>
-              <button className="w-full py-3.5 cursor-pointer font-medium bg-black text-white rounded-full">
+              <button className="w-full sm:w-auto px-6 py-3 font-medium bg-black text-white rounded-full">
                 Add to Cart
               </button>
             </div>
           </div>
         </div>
 
-        <div className="w-full mt-[80px] mb-[24px]">
-          <ul className="flex justify-between border-b border-gray-300">
+        <div className="w-full mt-16 mb-6">
+          <ul className="flex flex-col sm:flex-row justify-between border-b border-gray-300 text-center">
             {tabs.map((tab) => (
               <li
                 key={tab}
-                className={`cursor-pointer pb-2 text-center flex-1 ${
+                className={`cursor-pointer pb-2 flex-1 ${
                   activeTab === tab
                     ? "border-b-2 border-black font-medium"
                     : "text-gray-500"
