@@ -36,7 +36,7 @@ const TopSellings = () => {
   return (
     <div className="w-full">
       <h2 className="text-center text-[48px] mt-[72px] mb-[52px] font-bold">
-        NEW ARRIVALS
+        TOP SELLING
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[20px] px-[100px]">
         {top_selling.map((item, index) => (

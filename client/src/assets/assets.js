@@ -42,6 +42,26 @@ import letter from "./letter.svg";
 import happy from "./happy.svg";
 import arrow_left from "./arrow_left.svg";
 import arrow_right from "./arrow_right.svg";
+import profile_img from "./profile_img.jpg";
+import banner_sm_img from "./banner_sm_img.svg";
+import success from "./success.svg";
+import eye_off from "./eye-off.svg";
+import google from "./google.svg";
+import apple from "./apple.svg";
+import box from "./box.svg";
+import product_detail1 from "./product_detail1.svg";
+import product_detail2 from "./product_detail2.svg";
+import product_detail3 from "./product_detail3.svg";
+import choose from "./choose.svg";
+import t_shirt1 from "./t_shirt1.svg";
+import t_shirt2 from "./t_shirt2.svg";
+import t_shirt3 from "./t_shirt3.svg";
+import t_shirt4 from "./t_shirt4.svg";
+import three_dot from "./three_dot.svg";
+import filter from "./filter.svg";
+import promo from "./promo.svg";
+import trash from "./trash.svg";
+import arrow_beside from "./arrow_beside.svg";
 export const assets = {
   cancel,
   logo,
@@ -87,6 +107,26 @@ export const assets = {
   happy,
   arrow_left,
   arrow_right,
+  profile_img,
+  banner_sm_img,
+  success,
+  eye_off,
+  google,
+  apple,
+  box,
+  product_detail1,
+  product_detail2,
+  product_detail3,
+  choose,
+  t_shirt1,
+  t_shirt2,
+  t_shirt3,
+  t_shirt4,
+  three_dot,
+  filter,
+  promo,
+  trash,
+  arrow_beside,
 };
 
 export const brands = [
@@ -166,5 +206,108 @@ export const top_selling = [
     title: "Faded Skinny Jeans",
     rating: 4.5,
     price: 210,
+  },
+];
+
+export const products = [
+  {
+    image: top_selling1,
+    title: "Vertical Striped Shirt",
+    rating: 5.0,
+    price: 212,
+    discount: 20,
+  },
+  {
+    image: top_selling2,
+    title: "Courage Graphic T-shirt",
+    rating: 4.0,
+    price: 145,
+  },
+  {
+    image: top_selling3,
+    title: "Loose Fit Bermuda Shorts",
+    rating: 3.0,
+    price: 80,
+  },
+  {
+    image: top_selling4,
+    title: "Faded Skinny Jeans",
+    rating: 4.5,
+    price: 210,
+  },
+  {
+    image: new_arrivals1,
+    title: "T-shirt with Tape Details",
+    rating: 4.5,
+    price: 120,
+  },
+  {
+    image: new_arrivals2,
+    title: "Skinny Fit Jeans",
+    rating: 4.5,
+    price: 240,
+    discount: 20,
+  },
+  {
+    image: new_arrivals3,
+    title: "Checkered Shirt",
+    rating: 4.5,
+    price: 160,
+  },
+  {
+    image: new_arrivals4,
+    title: "Sleeve Striped T-shirt",
+    rating: 4.5,
+    price: 130,
+    discount: 30,
+  },
+  {
+    image: t_shirt1,
+    title: "Polo with Contrast Trims",
+    rating: 4.0,
+    price: 242,
+    discount: 20,
+  },
+  {
+    image: t_shirt2,
+    title: "Gradient Graphic T-shirt",
+    rating: 3.5,
+    price: 145,
+  },
+  {
+    image: t_shirt3,
+    title: "Polo with Tipping Details",
+    rating: 4.5,
+    price: 180,
+  },
+  {
+    image: t_shirt4,
+    title: "Black Striped T-shirt",
+    rating: 5.0,
+    price: 150,
+    discount: 30,
+  },
+];
+
+export const cart = [
+  {
+    image: new_arrivals1,
+    title: "Gradient Graphic T-shirt",
+    size: "Large",
+    color: "White",
+    price: 120,
+  },
+  {
+    image: new_arrivals2,
+    title: "CHECKERED SHIRT",
+    size: "Medium",
+    price: 180,
+    discount: 20,
+  },
+  {
+    image: new_arrivals3,
+    title: "SKINNY FIT JEANS",
+    size: "Large",
+    price: 240,
   },
 ];

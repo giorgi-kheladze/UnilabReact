@@ -23,7 +23,7 @@ const Banner = () => {
             loading="eager"
           />
           <img
-            src={assets.banner_sm}
+            src={assets.banner_sm_img}
             alt="small-banner"
             className="w-full md:hidden"
             loading="eager"
@@ -44,7 +44,7 @@ const Banner = () => {
       )}
 
       <div className="absolute top-[60px] left-[100px]">
-        <h1 className="max-w-[577px] text-[64px] leading-[64px] font-bold mb-[28px]">
+        <h1 className="text-[32px] leading-[40px] sm:text-[64px] sm:leading-[64px] max-w-[577px] font-bold mb-[28px]">
           FIND CLOTHES THAT MATCHES YOUR STYLE
         </h1>
         <p className="max-w-[550px] leading-[24px] text-gray-500 mb-[28px]">

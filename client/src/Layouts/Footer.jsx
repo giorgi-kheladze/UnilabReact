@@ -78,7 +78,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex gap-[100px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:flex gap-8 sm:gap-12">
             {linkSections.map((section, index) => (
               <div key={index}>
                 <h3 className="font-semibold text-base text-gray-900 md:mb-5 mb-2">
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6">
           <p className="py-4 text-sm md:text-base text-gray-500/80">
             Shop.co © 2000-2023, All Rights Reserved
           </p>

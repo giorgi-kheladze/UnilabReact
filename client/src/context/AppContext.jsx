@@ -1,5 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { products } from "../assets/assets";
 
 export const AppContext = createContext();
 
@@ -8,6 +9,16 @@ export const AppContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [seller, setSeller] = useState(false);
   const [userLogIn, setUserLogIn] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    setProducts(products);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   const value = {
     navigate,
     user,
@@ -16,10 +27,12 @@ export const AppContextProvider = ({ children }) => {
     setSeller,
     userLogIn,
     setUserLogIn,
+    products,
   };
+
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
 export const useAppContext = () => {
-  return useAppContext(AppContext);
+  return useContext(AppContext);
 };
